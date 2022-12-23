@@ -1,0 +1,45 @@
+ru:  
+  activerecord:
+    models:
+      user: 'Пользователи'
+      work: 'Заявки на работу'
+      service: 'Услуги'
+      service_record: 'Записи на услуги'
+      service_point: 'Техцентры'
+      review: 'Отзывы'
+      master: 'Мастеры'
+      consultation: 'Консультации'
+      admin_user: 'Администраторы'
+      comment: 'Комментарии'
+      vacancy: 'Вакансии'
+    attributes:
+      user:
+        email: "Почта"
+        first_name: "Имя"
+        second_name: "Фамилия"
+        phone: "Телефон"
+        password: "Пароль"
+        old_password: "Старый пароль"
+        password_confirmation: "Подтверждение пароля"
+        password_digest: 'Хэш пароля'
+        created_at: "Созданно"
+        updated_at: 'Обновленно'
+
+      review:
+        user: 'Пользователь'
+        body: 'Поле отзыва'
+        created_at: "Созданно"
+        updated_at: 'Обновленно'
+        
+      air_record:
+        user: 'Пользователь'
+        trouble: 'Описание проблемы'
+        air_ticket: 'Город'
+        date: 'Дата'
+        place: 'Место'
+        row1: 'Ряд'
+
+      air_tickets:
+        title: 'Название'
+        description: 'Описание'
+        price: 'Цена'

@@ -1,0 +1,21 @@
+<div class='top'>
+<% if @record.valid? %>
+<h3>Ваша билет</h3>
+    <p>Куда: <%= AirTicket.find_by(id: @record.air_ticket_id).title %></p>
+    <p>Место: <%= AirRecord.find_by(id: @record.air_ticket_id).place %></p>
+    <p>Сектор: <%= AirRecord.find_by(id: @record.air_ticket_id).row1 %></p>
+    <p>Дата записи: <%= @record.date%></p>
+    <% if @record.trouble.size != 0 %>
+    <p>Ваши предпочтения к полету: <%= @record.trouble %></p>
+    <% end %>
+    <div class='alert alert-info'>
+        <strong id='msg'><%= flash[:notice] %></strong>
+</div> 
+<% else %>
+<ul>
+    <% @record.errors.each do |error| %>
+       <div class='alert alert-info'><li><%= error.full_message %></li></div>
+    <% end %>
+  </ul>
+  <% end %>
+ </div>

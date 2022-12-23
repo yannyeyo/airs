@@ -1,0 +1,14 @@
+<h3>Просмотр моих билетов</h3>
+<% k = 1 %>
+<%@my_air_tickets.order(date: :desc).each do |air_ticket|%>
+<div class='line'></div>
+<h3><%= k %> Заказ:</h3>
+    <p>Куда: <%= AirTicket.find_by(id: air_ticket.air_ticket_id).title %></p>
+    <p>Место: <%= AirRecord.find_by(id: air_ticket.air_ticket_id).place %></p>
+    <p>Сектор: <%= AirRecord.find_by(id: air_ticket.air_ticket_id).row1 %></p>
+    <p>Дата записи: <%= l air_ticket.date, format: :long %></p>
+    <% if air_ticket.trouble.size != 0 %>
+    <p>Предпочтения к полету <%= air_ticket.trouble %></p>
+    <% end %>
+    <% k += 1 %>
+<% end %>

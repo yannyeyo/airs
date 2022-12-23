@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    attributes:
+      user:
+        email: "Email"
+        first_name: "first_name"
+        second_name: "second_name"
+        phone: "phone"
+        password: "password_digest"

@@ -1,0 +1,70 @@
+.header{
+    background-color: rgb(115, 219, 226);
+}
+.footer {
+    background-color: rgb(187, 237, 243);
+    padding-top: 1.9em;
+    }
+    
+    .footer_container h3 {
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #b85555;
+    }
+    
+    .footer_card li {
+    margin-left: 0.9em;
+    color: #11114d;
+    }
+.wrapper {
+    max-width: 70%;
+    margin: 0 auto;
+    background-color: rgb(133, 23, 23);
+}
+.card_end li {
+    list-style-type: none;
+    }
+    
+    .card_end a {
+    color: rgb(168, 32, 42);
+    }
+    
+    .span_footer {
+        margin-left: 10px;
+        color: #11114d;
+    }
+    .car_time span {
+        color: #11114d;
+    }
+    
+    .car_time {
+        margin-left: 10px;
+        font-size: 0.9em;
+    }
+    
+    .footer_card li {
+        margin-bottom: 0.4em;
+        font-size: 0.9em;
+    }
+        
+.footer_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.map {
+    height: 700px;
+    margin-bottom: 0.8em;
+}
+
+[class*="balloon__close-button"] {
+	opacity: 1;
+}
+body { background-image: url("back1.jpg") ;}
+.line {
+    padding-top: 10px;
+    border-bottom: 1px solid rgb(0, 0, 0); /* Параметры линии */
+   }
+.top {
+    padding-bottom: 10px;
+}

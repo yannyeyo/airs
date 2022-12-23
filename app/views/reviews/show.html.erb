@@ -1,0 +1,26 @@
+ <h1>Оставить отзыв</h1>
+ <%= form_with url: "/reviews/new", method: :post do |form| %>
+  <p><%= form.label :body, "Напишите комментарий" %></p>
+  <p><%= form.text_field :body, class: 'form-control', id: 'rev' %></p>
+  <p><%= form.label :photos, "Прикрепите фотографии к комментарию(не обязательно)" %></p>
+  <p><%= form.file_field :photos, multiple: true, class: 'form-control' %></p>
+  <p><%= form.submit("Оставить отзыв", id: "rev_btn") %></p>
+<% end %>
+<h3>Все отзывы</h3>
+
+<div id='comm_response-container'></div>
+
+<% @comments.order(created_at: :desc).each do |comm| %>
+<div class='top'>
+<div class='line'></div>
+<p>Дата: <%= l comm.created_at, format: :long %></p>
+<p>Клиент: <%= User.find_by(id: comm.user_id).first_name %> <%= User.find_by(id: comm.user_id).second_name %></p>
+<p>Отзыв: <%= comm.body %></p>
+<% if comm.photos.size != 0%>
+    <p>Прикрепленные фотографии:</p>
+    <% comm.photos.each do |picture| %>
+        <%= link_to image_tag(comm.comm_thumb(picture)), picture %>
+    <% end %>
+    <%end%>
+</div>
+<% end %>

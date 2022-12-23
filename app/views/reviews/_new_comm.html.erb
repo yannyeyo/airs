@@ -1,0 +1,22 @@
+<div class='top'>
+<% if @comment.valid? %>
+<div class='alert alert-info'>
+  <strong id='msg'><%= flash[:notice] %></strong>
+</div> 
+<p>Дата: <%= l @comment.created_at, format: :long%></p>
+<p>Клиент: <%= User.find_by(id: @comment.user_id).first_name %> <%= User.find_by(id: @comment.user_id).second_name %></p>
+<p>Текст: <%= @comment.body %></p>
+<% if @comment.photos.size != 0%>
+    <p>Прикрепленные фотографии:</p>
+    <% @comment.photos.each do |picture| %>
+        <%= link_to image_tag(@comment.comm_thumb(picture)), picture %>
+    <% end %>
+ <%end%>
+<% else %>
+  <ul>
+    <% @comment.errors.each do |error| %>
+       <div class='alert alert-info'><li><%= error.full_message %></li></div>
+    <% end %>
+  </ul>
+  <% end %>
+ </div>
