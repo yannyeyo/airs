@@ -15,12 +15,12 @@ RSpec.describe 'users', type: :system do
 
     find('#btn').click
 
-    expect(page).to have_text('На почту выслано письмо, подтвердите, пожалуйста')
+    expect(page).to have_text('Добро пожаловать, Игорь!')
   end
 
   scenario 'update user' do
     user = User.create(id: '1', first_name: 'Игорь', second_name: 'Ярубов', email: 'yarub@mail.ru', phone: '+71111111113', password: '12345',
-                       password_confirmation: '12345', email_confirmed: 'true')
+                       password_confirmation: '12345')
 
     visit login_path
 

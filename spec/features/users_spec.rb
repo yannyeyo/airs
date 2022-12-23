@@ -7,3 +7,4 @@ RSpec.describe 'users', type: :feature do
     visit 'users/:id/edit'
     expect(find('#msg')).to have_text('Вы не авторизованы')
   end
+end

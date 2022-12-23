@@ -1,9 +1,11 @@
 <h1>Купить билет</h1>
-<%= button_to 'Покупка', zap_path, method: :get, class: 'form-control'%>
+<%= button_to 'Покупка', zap_path, method: :get, class: 'form-control', id: 'ord'%>
 <% @air_tickets.each do |air_ticket| %>
 <div class='line'></div>
     <h3><%= air_ticket.title %></h3>
     <p><h5>Информация:</h5> <%= air_ticket.description %></p>
     <p><h5>Цена:</h5> <%= number_to_currency(air_ticket.price, unit: "Руб.", format: "%n %u") %></p>
-    <p><%= image_tag(air_ticket.mas_thumb(air_ticket.photo))%></p>
+    <% if air_ticket.photo.attached?%>
+        <p><%= image_tag(air_ticket.mas_thumb(air_ticket.photo))%></p>
+    <%end%>
 <%end%>

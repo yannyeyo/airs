@@ -5,7 +5,7 @@
       <div class='text-right'>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-3 mb-md-0">
               <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "О компании", home_path, class: 'nav-link px-2' %></button></strong></li>
-            <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Услуги", service_path, class: 'nav-link px-2' %></button></strong></li>
+            <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Услуги", service_path, class: 'nav-link px-2', id: 'signs' %></button></strong></li>
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Отзывы", comm_path, class: 'nav-link px-2', id: 'revs' %></button></strong></li>
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Контакты", contacts_path, class: 'nav-link px-2', data: {turbo: false} %></button></strong></li>
          <% if user_signed_in? %>

@@ -1,16 +1,16 @@
  <h1>Покупка билета на yanAirways</h1>
  <%= form_with url: "/signings/create_sign", method: :post do |form| %>
   <p><%= form.label :air_ticket_id, "Выберите куда летите" %></p>
-  <p><%= form.collection_select :air_ticket_id, AirTicket.order(:title),:id,:title, include_blank: true %></p>
+  <p><%= form.collection_select :air_ticket_id, AirTicket.order(:title),:id,:title, include_blank: false %></p>
   <p><%= form.label :place, "Выберите место" %></p>
-  <p><%= form.number_field :place, in: 1..60, step: 1 %></p>
+  <p><%= form.number_field :place, in: 1..60, step: 1, id: 'pl' %></p>
   <p><%= form.label :row1, "Выберите сектор" %></p>
-  <p><%= form.number_field :row1 %></p>
+  <p><%= form.number_field :row1, id: 'rw' %></p>
   <p><%= form.label :date, "Выберите дату" %></p>
-  <p><%= form.date_select(:date, start_year: 2022, end_year: 2023, order: [:day, :month, :year], prompt: { day: 'Выберите день', month: 'Выберите месяц', year: 'Выберите год' }) %></p>
+  <p><%= form.date_select(:date, start_year: 2022, end_year: 2023, order: [:day, :month, :year],  default: Date.today) %></p>
   <p><%= form.label :trouble, "Предпочтения к полету" %></p>
   <p><%= form.text_field :trouble, class: 'form-control' %></p>
-  <p><%= form.submit("Оставить заявку") %></p>
+  <p><%= form.submit("Оставить заявку", id: 'buy') %></p>
 <% end %>
 
 <div id='response-container'></div>

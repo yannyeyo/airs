@@ -6,7 +6,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'validations' do
     let!(:user_data) do
-      { first_name: 'Ян', second_name: 'Баян', password: '123', password_confirmation: '123', email: 'нфт@mail.ru',
+      { first_name: 'Ян', second_name: 'Баян', password: '123', password_confirmation: '123', email: 'user@mail.ru',
         phone: '+79999999999' }
     end
     let!(:user_email_repeat) do
